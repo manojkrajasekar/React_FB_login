@@ -73,8 +73,8 @@ class Facebooklogin extends Component{
 
     render(){
         return(
-            // <img src={facebook} title="facebook login" alt="facebook" onclick={ () => this.facebooklogin() } />
-            <button onClick={() => this.facebooklogin()}/>
+             <img src={facebook} title="facebook login" alt="facebook" onclick={ () => this.facebooklogin() } />
+            // <button onClick={() => this.facebooklogin()}/>
         )
     }
 
