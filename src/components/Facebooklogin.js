@@ -9,7 +9,8 @@ class Facebooklogin extends Component{
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
+            //js.src = "//connect.facebook.net/en_US/sdk.js";
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
             //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1099422136861554";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
@@ -77,12 +78,13 @@ class Facebooklogin extends Component{
              //<img src={facebook} title="facebook login" alt="facebook" onclick={ () => this.facebooklogin() } />
            //<button onClick={() => this.facebooklogin()}/>
            <div>
-                <div class="fb-login-button" 
-                     data-size="large" 
-                     data-auto-logout-link="true" 
-                     onClick={ () => this.facebooklogin() }
-                    >
-                </div>
+                
+                //      data-size="large" 
+                //      data-auto-logout-link="true" 
+                //      onClick={ () => this.facebooklogin() }
+                //     >
+                
+                <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
            </div>
 
            
