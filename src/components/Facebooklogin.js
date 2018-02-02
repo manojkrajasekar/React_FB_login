@@ -75,12 +75,9 @@ class Facebooklogin extends Component{
     render(){
         return(
              //<img src={facebook} title="facebook login" alt="facebook" onclick={ () => this.facebooklogin() } />
-            // <button onClick={() => this.facebooklogin()}/>
+            <button onClick={() => this.facebooklogin()}/>
             //<div class="fb-login-button" data-size="medium" data-auto-logout-link="true" onClick={ () => this.facebooklogin() }></div>
             // data-onlogin="checkLoginState();"
-            <div class="fb-login-button">
-                <button onClick={() => this.facebooklogin()}/>
-            </div>
         )
     }
 
