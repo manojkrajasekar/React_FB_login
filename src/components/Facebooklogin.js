@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Facebooklogin.css';
 
 
 class Facebooklogin extends Component{
@@ -78,9 +79,17 @@ class Facebooklogin extends Component{
              //<img src={facebook} title="facebook login" alt="facebook" onclick={ () => this.facebooklogin() } />
            //<button onClick={() => this.facebooklogin()}/>
         //    <div class="fb-login-button" data-size="large" data-auto-logout-link="true" onclick={ () => this.facebooklogin() }></div>
-           <div>
-                <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onclick={ () => this.facebooklogin() }></div>
-           </div>
+        <div className="content">
+            <div className="login">
+                <div className="app-title">
+                    PIXELS
+                </div>
+                <div className="fblogin">
+                    <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onclick={ () => this.facebooklogin() }></div>
+                </div>            
+            </div>
+        </div>
+            
 
            
             // data-onlogin="checkLoginState();"
