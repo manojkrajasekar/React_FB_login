@@ -46,7 +46,7 @@ class Facebooklogin extends Component{
       // successful.  See statusChangeCallback() for when this call is made.
       testAPI = () => {
         console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
+        window.FB.api('/me', function(response) {
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
@@ -80,13 +80,13 @@ class Facebooklogin extends Component{
       // Button.  See the onlogin handler attached to it in the sample
       // code below.
       checkLoginState = () => {
-        FB.getLoginStatus(function(response) {
+        window.FB.getLoginStatus(function(response) {
           this.statusChangeCallback(response);
         }.bind(this));
       }
       
       handleClick = () => {
-        FB.login(this.checkLoginState());
+        window.FB.login(this.checkLoginState());
       }
     
         render(){
