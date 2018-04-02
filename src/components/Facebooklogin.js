@@ -82,8 +82,7 @@ class Facebooklogin extends Component{
                     </div>
                     <div className="fblogin">
                         <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.facebooklogin() }></div>
-                    </div>
-                    <div><input type="submit">Cick Here</input></div>            
+                    </div>         
                 </div>
             </div>
          )
