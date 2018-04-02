@@ -39,7 +39,7 @@ class Facebooklogin extends Component{
             js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
             //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1099422136861554";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+        }(document, 'script', 'facebook-jssdk')));
     }
     
       // Here we run a very simple test of the Graph API after login is
