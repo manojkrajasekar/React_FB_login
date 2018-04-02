@@ -106,7 +106,7 @@ class Facebooklogin extends Component{
       }
 
       GoToLandingPage = () => {  
-          if(isLoggedIn()) {
+          if(this.state.isLoggedIn()) {
             return <Redirect to ="/LandingPage"/>;
           }
          //this.props.history.push('/LandingPage');
