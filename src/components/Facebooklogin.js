@@ -88,7 +88,7 @@ class Facebooklogin extends Component{
                 <div className="app-title">
                     PIXELS
                 </div>
-                <div className="fblogin" onClick={this.loginAuthenticate}>
+                <div className="fblogin" onClick={this.checkLoginState}>
                     <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.facebooklogin() }></div>
                 </div>            
             </div>
