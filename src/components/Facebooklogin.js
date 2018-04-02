@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import './Facebooklogin.css';
 
 
@@ -75,7 +76,12 @@ class Facebooklogin extends Component{
     }
 
     loginAuthenticate = () => {
-        console.log('Logging in');
+        if (response.status === 'connected') {
+            console.log('connected');
+        } 
+        else if (response.status === 'not_authorized') {
+            console.log('Import error', 'Authorize app to import data', 'error')
+        }
     }
 
     render(){
@@ -83,21 +89,18 @@ class Facebooklogin extends Component{
              //<img src={facebook} title="facebook login" alt="facebook" onclick={ () => this.facebooklogin() } />
            //<button onClick={() => this.facebooklogin()}/>
         //    <div class="fb-login-button" data-size="large" data-auto-logout-link="true" onclick={ () => this.facebooklogin() }></div>
-        <div className="content">
-            <div className="login">
-                <div className="app-title">
-                    PIXELS
+            <div className="content">
+                <div className="login">
+                    <div className="app-title">
+                        PIXELS
+                    </div>
+                    <div className="fblogin">
+                        <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.facebooklogin() }></div>
+                    </div>
+                    <div onClick={this.loginAuthenticate}><input type="submit">Cick Here</input></div>            
                 </div>
-                <div className="fblogin">
-                    <div  onClick={this.checkLoginState()} className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.facebooklogin() }></div>
-                </div>            
             </div>
-        </div>
-            
-
-           
-            // data-onlogin="checkLoginState();"
-        )
+         )
     }
 
 }
