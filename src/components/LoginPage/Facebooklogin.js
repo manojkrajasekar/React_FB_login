@@ -119,19 +119,27 @@ class Facebooklogin extends Component{
       }
     
         render(){
-            return(
-                <div className="content">
-                    <div className="login">
-                        <div className="app-title" onClick ={this.GoToLandingPage}>
-                            PIXELS
+            //return(
+                if(this.state.isLoggedIn === true) {
+                    //this.props.history.push('/LandingPage');
+                    return (<Redirect to ="/LandingPage" />);
+                  }
+                else {
+                    return (
+                    <div className="content">
+                        <div className="login">
+                            <div className="app-title" onClick ={this.GoToLandingPage}>
+                                PIXELS
+                            </div>
+                            
+                            <div className="fblogin">
+                                <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.handleClick() }></div>
+                            </div>         
                         </div>
-                        
-                        <div className="fblogin">
-                            <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.handleClick() }></div>
-                        </div>         
                     </div>
-                </div>
-            )
+                    );
+            }
+            //)
         }
 }
 
