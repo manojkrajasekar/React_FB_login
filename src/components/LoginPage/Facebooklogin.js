@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
+import { Redirect, BrowserRouter, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import './Facebooklogin.css';
@@ -8,7 +8,7 @@ import './Facebooklogin.css';
 class Facebooklogin extends Component{
     
     state = {
-        isLoggedIn: false
+        isLoggedIn:false
     }
 
     setloggedIn = () => {
@@ -16,6 +16,7 @@ class Facebooklogin extends Component{
             isLoggedIn:!this.state.isLoggedIn
         })
     }
+
     componentDidMount() {
         window.fbAsyncInit = function() {
             window.FB.init({
@@ -107,7 +108,7 @@ class Facebooklogin extends Component{
 
       GoToLandingPage = () => {  
           if(this.state.isLoggedIn) {
-            return <Redirect to ="/LandingPage"/>;
+            return <Redirect to ="/LandingPage" />;
           }
          //this.props.history.push('/LandingPage');
         }
