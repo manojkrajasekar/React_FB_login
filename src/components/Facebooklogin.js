@@ -67,6 +67,10 @@ class Facebooklogin extends Component{
         });
     }
 
+    loginAlert = () => {
+        console.log('Logging in');
+    }
+
     render(){
         return(
              //<img src={facebook} title="facebook login" alt="facebook" onclick={ () => this.facebooklogin() } />
@@ -77,7 +81,7 @@ class Facebooklogin extends Component{
                     <div className="app-title">
                         PIXELS
                     </div>
-                    <div className="fblogin">
+                    <div className="fblogin" onClick={this.loginAlert}>
                         <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.facebooklogin() }></div>
                     </div>    
                 </div>
