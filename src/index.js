@@ -6,12 +6,17 @@ import IndexPage from './components/IndexPage';
 // import './index.css';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter } from './C:/Users/Mano/AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/react-router-dom';
 
 
 // const responseFacebook = (response) => {
 //     console.log(response);
 //   }
-   
+export const Wrapper = () => {
+    <BrowserRouter>
+        <IndexPage />        
+    </BrowserRouter>
+};
 
 ReactDOM.render(
     // <FacebookLogin
@@ -20,6 +25,6 @@ ReactDOM.render(
     // fields="name,email,picture"
     // //onClick={componentClicked}
     // callback={responseFacebook} />
-    <IndexPage />    
+    <Wrapper />    
     , document.getElementById('root'));
 registerServiceWorker();
