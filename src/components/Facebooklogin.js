@@ -59,7 +59,7 @@ class Facebooklogin extends Component{
         // for FB.getLoginStatus().
         if (response.status === 'connected') {
           // Logged into your app and Facebook.
-          this.testAPI();
+            this.getUserData();
         } else if (response.status === 'not_authorized') {
           // The person is logged into Facebook, but not your app.
         //   document.getElementById('status').innerHTML = 'Please log ' +
@@ -85,7 +85,7 @@ class Facebooklogin extends Component{
 
        // Here we run a very simple test of the Graph API after login is
       // successful.  See statusChangeCallback() for when this call is made.
-      testAPI = () => {
+      getUserData = () => {
         console.log('Welcome!  Fetching your information.... ');
         window.FB.api('/me', function(response) {
         console.log('Successful login for: ' + response.name);
