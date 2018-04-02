@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
 import Facebooklogin from './components/LoginPage/Facebooklogin';
 import IndexPage from './components/IndexPage';
@@ -12,11 +13,11 @@ import { BrowserRouter } from './C:/Users/Mano/AppData/Local/Microsoft/TypeScrip
 // const responseFacebook = (response) => {
 //     console.log(response);
 //   }
-export const Wrapper = () => {
+export const Wrapper = () => (
     <BrowserRouter>
         <IndexPage />        
     </BrowserRouter>
-};
+);
 
 ReactDOM.render(
     // <FacebookLogin
