@@ -27,15 +27,15 @@ class Facebooklogin extends Component{
     }
     
     facebooklogin = () => {
-        /*window.FB.login(
-            this.checkLoginState(), 
-            { scope : 'email, public_profile' } //Add scope whatever you need about the facebook user
-        ); */
-        
         window.FB.login(
-            function(resp){
-                this.statusChangeCallback(resp);
-            }.bind(this),{ scope : 'email,user_work_history,user_education_history,user_location,public_profile' });
+                this.checkLoginState(), 
+                { scope : 'email, public_profile' } //Add scope whatever you need about the facebook user
+            ); 
+        
+        // window.FB.login(
+        //     function(resp){
+        //         this.statusChangeCallback(resp);
+        //     }.bind(this),{ scope : 'email,user_work_history,user_education_history,user_location,public_profile' });
     }
     
     checkLoginState = () => {
@@ -72,9 +72,6 @@ class Facebooklogin extends Component{
     
     render(){
         return(
-             //<img src={facebook} title="facebook login" alt="facebook" onclick={ () => this.facebooklogin() } />
-           //<button onClick={() => this.facebooklogin()}/>
-        //    <div class="fb-login-button" data-size="large" data-auto-logout-link="true" onclick={ () => this.facebooklogin() }></div>
             <div className="content">
                 <div className="login">
                     <div className="app-title">
