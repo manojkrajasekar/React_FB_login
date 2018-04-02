@@ -15,6 +15,7 @@ class Facebooklogin extends Component{
         this.setState({
             isLoggedIn:!this.state.isLoggedIn
         })
+        console.log(this.state.isLoggedIn);
     }
 
     componentDidMount() {
