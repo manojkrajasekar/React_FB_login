@@ -107,7 +107,7 @@ class Facebooklogin extends Component{
             return(
                 <div className="content">
                     <div className="login">
-                        <div className="app-title">
+                        <div className="app-title" onClick ={this.GoToLandingPage}>
                             PIXELS
                         </div>
                         
