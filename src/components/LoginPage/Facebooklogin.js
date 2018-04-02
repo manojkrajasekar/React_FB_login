@@ -96,7 +96,8 @@ class Facebooklogin extends Component{
       }
 
       GoToLandingPage = () => {  
-         this.props.history.push('/LandingPage');
+         //this.props.history.push('/LandingPage');
+        <Redirect to ="/LandingPage"/>
        }
       
       handleClick = () => {
