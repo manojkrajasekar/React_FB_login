@@ -47,16 +47,7 @@ class Facebooklogin extends Component{
         }(document, 'script', 'facebook-jssdk')));
     }
     
-      // Here we run a very simple test of the Graph API after login is
-      // successful.  See statusChangeCallback() for when this call is made.
-      testAPI = () => {
-        console.log('Welcome!  Fetching your information.... ');
-        window.FB.api('/me', function(response) {
-        console.log('Successful login for: ' + response.name);
-        document.getElementById('status').innerHTML =
-          'Thanks for logging in, ' + response.name + '!';
-        });
-      }
+     
       
       // This is called with the results from from FB.getLoginStatus().
       statusChangeCallback = (response) => {
@@ -81,6 +72,17 @@ class Facebooklogin extends Component{
         //   'into Facebook.';
             console.log('Please log in ');
         }
+      }
+
+       // Here we run a very simple test of the Graph API after login is
+      // successful.  See statusChangeCallback() for when this call is made.
+      testAPI = () => {
+        console.log('Welcome!  Fetching your information.... ');
+        window.FB.api('/me', function(response) {
+        console.log('Successful login for: ' + response.name);
+        document.getElementById('status').innerHTML =
+          'Thanks for logging in, ' + response.name + '!';
+        });
       }
       
       // This function is called when someone finishes with the Login
