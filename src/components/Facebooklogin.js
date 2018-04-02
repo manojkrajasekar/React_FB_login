@@ -26,11 +26,7 @@ class Facebooklogin extends Component{
           //    your app or not.
           //
           // These three cases are handled in the callback function.
-          window.FB.getLoginStatus(function(response) {
-                this.statusChangeCallback(response);
-            }.bind(this));
-      
-        // Load the SDK asynchronously
+             // Load the SDK asynchronously
         ((function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -40,6 +36,13 @@ class Facebooklogin extends Component{
             //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1099422136861554";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk')));
+
+          
+        window.FB.getLoginStatus(function(response) {
+                this.statusChangeCallback(response);
+            }.bind(this));
+      
+       
     }
     
       // Here we run a very simple test of the Graph API after login is
@@ -103,7 +106,6 @@ class Facebooklogin extends Component{
                 </div>
             )
         }
-
 }
 
 
