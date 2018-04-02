@@ -89,7 +89,7 @@ class Facebooklogin extends Component{
                     PIXELS
                 </div>
                 <div className="fblogin">
-                    <div  onClick={this.checkLoginState} className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.facebooklogin() }></div>
+                    <div  onClick={this.checkLoginState()} className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.facebooklogin() }></div>
                 </div>            
             </div>
         </div>
