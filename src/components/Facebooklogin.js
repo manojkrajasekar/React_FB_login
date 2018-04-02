@@ -13,7 +13,7 @@ class Facebooklogin extends Component{
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use version 2.1
             });
-        };
+        
       
           // Now that we've initialized the JavaScript SDK, we call
           // FB.getLoginStatus().  This function gets the state of the
@@ -26,8 +26,17 @@ class Facebooklogin extends Component{
           //    your app or not.
           //
           // These three cases are handled in the callback function.
-             // Load the SDK asynchronously
-        ((function(d, s, id) {
+        
+         
+
+          
+        window.FB.getLoginStatus(function(response) {
+                this.statusChangeCallback(response);
+            }.bind(this));
+        }.bind(this);
+      
+         // Load the SDK asynchronously
+         ((function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
@@ -36,13 +45,6 @@ class Facebooklogin extends Component{
             //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1099422136861554";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk')));
-
-          
-        window.FB.getLoginStatus(function(response) {
-                this.statusChangeCallback(response);
-            }.bind(this));
-      
-       
     }
     
       // Here we run a very simple test of the Graph API after login is
