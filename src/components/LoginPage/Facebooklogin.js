@@ -7,6 +7,15 @@ import './Facebooklogin.css';
 
 class Facebooklogin extends Component{
     
+    state = {
+        isLoggedIn: false
+    }
+
+    setloggedIn = () => {
+        this.setState({
+            isLoggedIn:!this.state.isLoggedIn
+        })
+    }
     componentDidMount() {
         window.fbAsyncInit = function() {
             window.FB.init({
@@ -62,6 +71,7 @@ class Facebooklogin extends Component{
         if (response.status === 'connected') {
           // Logged into your app and Facebook.
             this.getUserData();
+            this.setloggedIn();
             this.GoToLandingPage();
         } else if (response.status === 'not_authorized') {
           // The person is logged into Facebook, but not your app.
@@ -96,9 +106,11 @@ class Facebooklogin extends Component{
       }
 
       GoToLandingPage = () => {  
+          if(isLoggedIn()) {
+            return <Redirect to ="/LandingPage"/>;
+          }
          //this.props.history.push('/LandingPage');
-        return <Redirect to ="/LandingPage"/>;
-       }
+        }
       
       handleClick = () => {
         window.FB.login(this.checkLoginState());
