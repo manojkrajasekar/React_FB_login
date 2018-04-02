@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './Facebooklogin.css';
 
 
@@ -60,6 +62,7 @@ class Facebooklogin extends Component{
         if (response.status === 'connected') {
           // Logged into your app and Facebook.
             this.getUserData();
+            this.GoToLandingPage();
         } else if (response.status === 'not_authorized') {
           // The person is logged into Facebook, but not your app.
         //   document.getElementById('status').innerHTML = 'Please log ' +
@@ -91,6 +94,10 @@ class Facebooklogin extends Component{
         console.log('Successful login for: ' + response.name);
         });
       }
+
+      GoToLandingPage = () => {  
+         this.props.history.push('/LandingPage');
+       }
       
       handleClick = () => {
         window.FB.login(this.checkLoginState());
