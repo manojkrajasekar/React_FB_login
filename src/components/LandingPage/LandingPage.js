@@ -11,17 +11,15 @@ class LandingPage extends Component {
                 version    : 'v2.8' // use version 2.1
                 });
         }
-
-        logout = () => {
-            window.FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                    console.log('logging out');
-                }
-            });
-        }
     }
 
-    
+    logout = () => {
+        window.FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                console.log('logging out');
+            }
+        });
+    }
 
     render() {
         return (
