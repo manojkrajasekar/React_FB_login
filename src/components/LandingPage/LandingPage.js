@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 class LandingPage extends Component {
 
@@ -16,7 +17,11 @@ class LandingPage extends Component {
     logout = () => {
         window.FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
-                console.log('logging out');
+                console.log('Going to log out');
+                window.FB.logout((response) =>{
+                    console.log('logged out');
+                    return (<Redirect to ="/" />);
+                });
             }
         });
     }
