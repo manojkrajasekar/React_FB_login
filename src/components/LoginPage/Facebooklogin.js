@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Redirect, BrowserRouter, Route } from 'react-router';
-import { Link } from 'react-router-dom';
+//import { Redirect, BrowserRouter, Route } from 'react-router';
+import { Redirect, BrowserRouter, Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import './Facebooklogin.css';
 
@@ -40,9 +40,6 @@ class Facebooklogin extends Component{
           //
           // These three cases are handled in the callback function.
         
-         
-
-          
         window.FB.getLoginStatus(function(response) {
                 this.statusChangeCallback(response);
             }.bind(this));
@@ -118,27 +115,26 @@ class Facebooklogin extends Component{
         window.FB.login(this.checkLoginState());
       }
     
-        render(){
+        render() {
             //return(
                 if(this.state.isLoggedIn === true) {
                     //this.props.history.push('/LandingPage');
-                    return (<Redirect push to ="/LandingPage" />);
-                  }
+                    return (<Redirect push to = "/LandingPage" />);
+                }
                 else {
                     return (
-                    <div className="content">
-                        <div className="login">
-                            <div className="app-title" onClick ={this.GoToLandingPage}>
-                                PIXELS
+                        <div className="content">
+                            <div className="login">
+                                <div className="app-title" onClick ={this.GoToLandingPage}>
+                                    PIXELS
+                                </div>
+                                <div className="fblogin">
+                                    <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.handleClick() }></div>
+                                </div>         
                             </div>
-                            
-                            <div className="fblogin">
-                                <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onClick={ () => this.handleClick() }></div>
-                            </div>         
                         </div>
-                    </div>
                     );
-            }
+                }
             //)
         }
 }

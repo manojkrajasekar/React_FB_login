@@ -36,7 +36,7 @@ class LandingPage extends Component {
     render() {
         if(this.state.isLoggedOut === true) {
             return (
-                <Redirect to= "/" />
+                <Redirect push to = "/" />
             );    
         }
         else {
