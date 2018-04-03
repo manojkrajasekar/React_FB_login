@@ -3,17 +3,6 @@ import { Redirect } from 'react-router-dom';
 
 class LandingPage extends Component {
 
-    // componentDidMount() {
-    //         window.fbAsyncInit = function() {
-    //             window.FB.init({
-    //             appId      : '1099422136861554',
-    //             cookie     : true,  // enable cookies to allow the server to access the session
-    //             xfbml      : true,  // parse social plugins on this page
-    //             version    : 'v2.8' // use version 2.1
-    //             });
-    //     }
-    // }
-
     state = {
         isLoggedOut: false
     }
