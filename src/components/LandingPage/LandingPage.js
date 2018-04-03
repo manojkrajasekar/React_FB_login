@@ -14,25 +14,39 @@ class LandingPage extends Component {
     //     }
     // }
 
+    state = {
+        isLoggedOut: false
+    }
+
+    setLoggedOutValue = () => {
+        isLoggedOut: !this.state.isLoggedOut
+    }
+
     logout = () => {
         window.FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                 console.log('Going to log out');
                 window.FB.logout((response) => {
-                    
-                    return (console.log('logged out'));
+                    return (this.setLoggedOutValue);
                 });
             }
         });
     }
 
     render() {
-        return (
-            <div>
-                <p>This is the landing page</p>
-                <button onClick={this.logout}>Log out</button>
-            </div>
-        );
+        if(this.state.isLoggedOut === true) {
+            return (
+                <Redirect to= "/" />
+            );    
+        }
+        else {
+            return (
+                <div>
+                    <p>This is the landing page</p>
+                    <button onClick={this.logout}>Log out</button>
+                </div>
+            );
+        }
     }
 }
 
